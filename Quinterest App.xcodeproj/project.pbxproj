@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52635CE1B2C7B76009AF9CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52635CC1B2C7B76009AF9CB /* Main.storyboard */; };
+		B589B88A1B2BAEB70087D156 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589B8891B2BAEB70087D156 /* json.swift */; };
 		B5D3B6FB1B2B30F300552275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */; };
 		B5D3B6FD1B2B30F300552275 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B6FC1B2B30F300552275 /* ViewController.swift */; };
-		B5D3B7001B2B30F300552275 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5D3B6FE1B2B30F300552275 /* Main.storyboard */; };
 		B5D3B7021B2B30F300552275 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D3B7011B2B30F300552275 /* Images.xcassets */; };
 		B5D3B7051B2B30F300552275 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D3B7031B2B30F300552275 /* LaunchScreen.xib */; };
 		B5D3B7111B2B30F300552275 /* Quinterest_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B7101B2B30F300552275 /* Quinterest_AppTests.swift */; };
+		B5D3B71F1B2B594000552275 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B71E1B2B594000552275 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +28,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B52635CD1B2C7B76009AF9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B589B8891B2BAEB70087D156 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = json.swift; path = "../../../../../Downloads/swift-json-master/json/json.swift"; sourceTree = "<group>"; };
 		B5D3B6F51B2B30F300552275 /* Quinterest App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quinterest App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D3B6F91B2B30F300552275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5D3B6FC1B2B30F300552275 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B5D3B6FF1B2B30F300552275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5D3B7011B2B30F300552275 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5D3B7041B2B30F300552275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B5D3B70A1B2B30F300552275 /* Quinterest AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quinterest AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D3B70F1B2B30F300552275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5D3B7101B2B30F300552275 /* Quinterest_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quinterest_AppTests.swift; sourceTree = "<group>"; };
+		B5D3B71E1B2B594000552275 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +81,14 @@
 		B5D3B6F71B2B30F300552275 /* Quinterest App */ = {
 			isa = PBXGroup;
 			children = (
+				B52635CC1B2C7B76009AF9CB /* Main.storyboard */,
 				B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */,
 				B5D3B6FC1B2B30F300552275 /* ViewController.swift */,
-				B5D3B6FE1B2B30F300552275 /* Main.storyboard */,
+				B589B8891B2BAEB70087D156 /* json.swift */,
 				B5D3B7011B2B30F300552275 /* Images.xcassets */,
 				B5D3B7031B2B30F300552275 /* LaunchScreen.xib */,
 				B5D3B6F81B2B30F300552275 /* Supporting Files */,
+				B5D3B71E1B2B594000552275 /* ResultsViewController.swift */,
 			);
 			path = "Quinterest App";
 			sourceTree = "<group>";
@@ -192,7 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5D3B7001B2B30F300552275 /* Main.storyboard in Resources */,
+				B52635CE1B2C7B76009AF9CB /* Main.storyboard in Resources */,
 				B5D3B7051B2B30F300552275 /* LaunchScreen.xib in Resources */,
 				B5D3B7021B2B30F300552275 /* Images.xcassets in Resources */,
 			);
@@ -214,6 +220,8 @@
 			files = (
 				B5D3B6FD1B2B30F300552275 /* ViewController.swift in Sources */,
 				B5D3B6FB1B2B30F300552275 /* AppDelegate.swift in Sources */,
+				B5D3B71F1B2B594000552275 /* ResultsViewController.swift in Sources */,
+				B589B88A1B2BAEB70087D156 /* json.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,10 +244,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B5D3B6FE1B2B30F300552275 /* Main.storyboard */ = {
+		B52635CC1B2C7B76009AF9CB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B5D3B6FF1B2B30F300552275 /* Base */,
+				B52635CD1B2C7B76009AF9CB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -411,6 +419,7 @@
 				B5D3B7161B2B30F300552275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5D3B7171B2B30F300552275 /* Build configuration list for PBXNativeTarget "Quinterest AppTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +428,7 @@
 				B5D3B7191B2B30F300552275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
