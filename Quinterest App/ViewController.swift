@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK: Outlets & Properties
-    @IBOutlet weak var searchTerm: UITextField!
+
+    @IBOutlet weak var searchTerm: SpringTextField!
     @IBOutlet weak var searchTypeControl: UISegmentedControl!
     @IBOutlet weak var difficultyControl: UISegmentedControl!
     @IBOutlet weak var questionTypeControl: UISegmentedControl!
     @IBOutlet weak var categoryPickerView: UIView!
     @IBOutlet weak var tournamentPickerView: UIView!
-    @IBOutlet weak var CategoriesPicker: UIPickerView!
-    @IBOutlet weak var TournamentsPicker: UIPickerView!
+    @IBOutlet weak var categoriesPicker: UIPickerView!
+    @IBOutlet weak var tournamentsPicker: UIPickerView!
     private var categories: JSON!
     private var tournaments: JSON!
     
@@ -34,19 +36,42 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
         
         // Set the width of the searchType segmented control
-        searchTypeControl.apportionsSegmentWidthsByContent = true;
+        //searchTypeControl.apportionsSegmentWidthsByContent = true;
         
         // Load picker data
         loadCategories()
         loadTournaments(difficulty: "All", resultsType: "All")
-        
+                
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func jiggleAnimation(#viewToAnimate: UIView) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.02
+        animation.repeatCount = 8
+        animation.autoreverses = true
+        animation.fromValue = NSValue(CGPoint: CGPointMake(viewToAnimate.center.x - 10, viewToAnimate.center.y))
+        animation.toValue = NSValue(CGPoint: CGPointMake(viewToAnimate.center.x + 10, viewToAnimate.center.y))
+        viewToAnimate.layer.addAnimation(animation, forKey: "position")
+    }
+    
+    func wiggleAnimation(#viewToAnimate: UIView) {
+        var transform:CATransform3D = CATransform3DMakeRotation(0.08, 0, 0, 1.0);
+        var animation:CABasicAnimation = CABasicAnimation(keyPath: "transform");
+        animation.toValue = NSValue(CATransform3D: transform);
+        animation.autoreverses = true;
+        animation.duration = 0.1;
+        animation.repeatCount = 10;
+        animation.delegate = self;
+        viewToAnimate.layer.addAnimation(animation, forKey: "wiggleAnimation");
+    }
+    
+    //func squeezeUpAnimation
     
     /************************************/
     /************************************/
@@ -55,9 +80,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     // MARK: Keyboard Methods
     
     // Closes the keyboard when finished
-    @IBAction func textFieldDoneEditing(sender: UITextField) {
-        sender.resignFirstResponder()
-        self.performSegueWithIdentifier("resultsSegue", sender: self)
+    @IBAction func textFieldDoneEditing(sender: SpringTextField) {
+        if sender.text == "" {
+            sender.animation = "shake"
+            sender.curve = "spring"
+            sender.duration = 1.0
+            sender.animate()
+        } else {
+            self.performSegueWithIdentifier("resultsSegue", sender: self)
+        }
     }
     
     // Keyboard if background is tapped
@@ -74,33 +105,37 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // MARK: Picker Animations
     @IBAction func TournamentPickerInitiate(sender: UIButton) {
-        UIView.animateWithDuration(0.5) {
+        UIView.animateWithDuration(0.3) {
             var tournamentPickerFrame = self.tournamentPickerView.frame
-            tournamentPickerFrame.origin.y = self.view.frame.height - 300
+            tournamentPickerFrame.origin.y = self.view.frame.height - tournamentPickerFrame.height
             self.tournamentPickerView.frame = tournamentPickerFrame
         }
     }
     
     @IBAction func TournamentPickerTerminate(sender: UIBarButtonItem) {
-        UIView.animateWithDuration(0.5) {
+        UIView.animateWithDuration(0.3) {
             var tournamentPickerFrame = self.tournamentPickerView.frame
-            tournamentPickerFrame.origin.y = self.view.frame.height + 300
+            tournamentPickerFrame.origin.y = self.view.frame.height + tournamentPickerFrame.height
             self.tournamentPickerView.frame = tournamentPickerFrame
         }
     }
     
     @IBAction func CategoryPickerInitiate(sender: UIButton) {
-        UIView.animateWithDuration(0.5) {
+        //self.categoryPickerView.animation = "slideUp"
+        //self.categoryPickerView.curve = "spring"
+        //self.categoryPickerView.duration = 0.2
+        //self.categoryPickerView.animate()
+        UIView.animateWithDuration(0.3) {
             var categoryPickerFrame = self.categoryPickerView.frame
-            categoryPickerFrame.origin.y = self.view.frame.height - 300
+            categoryPickerFrame.origin.y = self.view.frame.height - categoryPickerFrame.height
             self.categoryPickerView.frame = categoryPickerFrame
         }
     }
     
     @IBAction func CategoryPickerTerminate(sender: UIBarButtonItem) {
-        UIView.animateWithDuration(0.5) {
+        UIView.animateWithDuration(0.3) {
             var categoryPickerFrame = self.categoryPickerView.frame
-            categoryPickerFrame.origin.y = self.view.frame.height + 300
+            categoryPickerFrame.origin.y = self.view.frame.height + categoryPickerFrame.height
             self.categoryPickerView.frame = categoryPickerFrame
         }
     }
@@ -110,6 +145,39 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     // Reverse Segue Back to Search Form
     @IBAction func unwindToSearchForm(segue:UIStoryboardSegue) {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "resultsSegue") {
+            var resultsViewController = segue.destinationViewController as! ResultsViewController
+            
+            // Get the search term
+            resultsViewController.searchTermText = searchTerm.text
+            
+            // Get the search type
+            resultsViewController.searchType = searchTypeControl.titleForSegmentAtIndex(searchTypeControl.selectedSegmentIndex)!
+            if (resultsViewController.searchType == "Question & Answer") {
+                resultsViewController.searchType = "AnswerQuestion"
+            }
+            
+            // Get the results type
+            resultsViewController.resultsType = questionTypeControl.titleForSegmentAtIndex(questionTypeControl.selectedSegmentIndex)!
+            
+            // Get the difficulty
+            resultsViewController.difficulty = difficultyControl.titleForSegmentAtIndex(difficultyControl.selectedSegmentIndex)!
+            
+            // Get the category
+            resultsViewController.category = categories[categoriesPicker.selectedRowInComponent(0) + 1].asString!
+            
+            // Get the tournament
+            resultsViewController.tournament = "All"
+            if tournamentsPicker.selectedRowInComponent(0) != 0 {
+                var tournamentYear = tournaments[tournamentsPicker.selectedRowInComponent(0) + 1]["year"].asString!
+                var tournamentName = tournaments[tournamentsPicker.selectedRowInComponent(0) + 1]["tournament"].asString!
+                resultsViewController.tournament = tournamentName + "," + tournamentYear
+            }
+            
+        }
     }
     
     
@@ -128,7 +196,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // Returns number of rows in picker
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == CategoriesPicker {
+        if pickerView == categoriesPicker {
             return self.categories[0].asInt!
         } else {
             return self.tournaments[0].asInt!
@@ -140,7 +208,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // Returns data for picker rows
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        if pickerView == CategoriesPicker {
+        if pickerView == categoriesPicker {
             return self.categories[row + 1].asString!
         } else {
             return self.tournaments[row + 1]["name"].asString!
@@ -156,14 +224,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func difficultyControlChanged(sender: UISegmentedControl) {
         loadTournaments(difficulty: sender.titleForSegmentAtIndex(sender.selectedSegmentIndex)!, resultsType: questionTypeControl.titleForSegmentAtIndex(questionTypeControl.selectedSegmentIndex)!)
-        TournamentsPicker.reloadAllComponents()
-        TournamentsPicker.selectRow(0, inComponent: 0, animated: true)
+        tournamentsPicker.reloadAllComponents()
+        tournamentsPicker.selectRow(0, inComponent: 0, animated: true)
     }
     
     @IBAction func questionTypeControlChanged(sender: UISegmentedControl) {
         loadTournaments(difficulty: difficultyControl.titleForSegmentAtIndex(difficultyControl.selectedSegmentIndex)!, resultsType: sender.titleForSegmentAtIndex(sender.selectedSegmentIndex)!)
-        TournamentsPicker.reloadAllComponents()
-        TournamentsPicker.selectRow(0, inComponent: 0, animated: true)
+        tournamentsPicker.reloadAllComponents()
+        tournamentsPicker.selectRow(0, inComponent: 0, animated: true)
     }
     
     // Loads the categories synchronously from MySQL database

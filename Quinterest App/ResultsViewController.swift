@@ -10,6 +10,13 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
+    var searchTermText: String!
+    var searchType: String!
+    var resultsType: String!
+    var difficulty: String!
+    var category: String!
+    var tournament: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
