@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" rowHeight="324" id="ILc-qk-RAZ">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="342"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ILc-qk-RAZ" id="Pmt-6L-ff1">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2008 ACF Fall" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tw-gr-PIH">
+                        <rect key="frame" x="8" y="8" width="303" height="14.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID: 243" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khe-4C-yCW">
+                        <rect key="frame" x="319" y="8" width="40" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="250" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATq-Mn-GeP">
+                        <rect key="frame" x="8" y="30" width="351" height="264"/>
+                        <string key="text">Question: A carcinogenic methyl-substituted derivative of this molecule is formed from the hydrolysis of the fungal toxin gyromitrin. This molecule's derivatives were used to produce early monoamine oxidase inhibitors, including a sulfate marketed as a treatment for cachexia and anorexia. This molecule reacts with enones or diketones in the most common pyrazole synthesis. As an alternative to acidic or basic workup, this molecule cleaves the (*) N-alkylphthalimide intermediate in a reaction that converts haloalkanes to primary amines. Diethylene glycol is the most common medium for a basic reaction that is driven by this molecule's conversion to nitrogen gas; that reaction transforms carbonyls into alkanes. For 10 points, name this molecule employed in the Gabriel synthesis and Wolff-Kishner reduction, which is found in hypergolic rocket propellants and has the molecular formula N2H4.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer: awoieh oaiehf oiahef oihae sehop waoeurhaw oahe" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJQ-Yv-ffN">
+                        <rect key="frame" x="8" y="302" width="351" height="31.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PJQ-Yv-ffN" firstAttribute="leading" secondItem="Pmt-6L-ff1" secondAttribute="leading" constant="8" id="0WJ-z6-92h"/>
+                    <constraint firstItem="PJQ-Yv-ffN" firstAttribute="top" secondItem="ATq-Mn-GeP" secondAttribute="bottom" constant="8" id="20q-AM-yZI"/>
+                    <constraint firstItem="6tw-gr-PIH" firstAttribute="leading" secondItem="Pmt-6L-ff1" secondAttribute="leading" constant="8" id="8oe-is-gfH"/>
+                    <constraint firstAttribute="trailing" secondItem="khe-4C-yCW" secondAttribute="trailing" constant="8" id="AmV-pK-ybt"/>
+                    <constraint firstAttribute="trailing" secondItem="PJQ-Yv-ffN" secondAttribute="trailing" constant="8" id="Nqb-wl-t2t"/>
+                    <constraint firstAttribute="bottom" secondItem="PJQ-Yv-ffN" secondAttribute="bottom" constant="8" id="Nrf-gc-6cv"/>
+                    <constraint firstItem="khe-4C-yCW" firstAttribute="leading" secondItem="6tw-gr-PIH" secondAttribute="trailing" constant="8" id="ULd-wT-hgo"/>
+                    <constraint firstItem="khe-4C-yCW" firstAttribute="top" secondItem="Pmt-6L-ff1" secondAttribute="top" constant="8" id="dth-WK-2nC"/>
+                    <constraint firstAttribute="trailing" secondItem="ATq-Mn-GeP" secondAttribute="trailing" constant="8" id="dx6-kA-bQM"/>
+                    <constraint firstItem="6tw-gr-PIH" firstAttribute="baseline" secondItem="khe-4C-yCW" secondAttribute="baseline" id="h6X-Iu-oao"/>
+                    <constraint firstItem="ATq-Mn-GeP" firstAttribute="leading" secondItem="Pmt-6L-ff1" secondAttribute="leading" constant="8" id="hH1-2A-Eby"/>
+                    <constraint firstItem="6tw-gr-PIH" firstAttribute="top" secondItem="Pmt-6L-ff1" secondAttribute="top" constant="8" id="tDD-5Q-C7g"/>
+                    <constraint firstItem="ATq-Mn-GeP" firstAttribute="top" secondItem="6tw-gr-PIH" secondAttribute="bottom" constant="8" id="ufc-Le-Dcm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="676.5" y="534"/>
+        </tableViewCell>
+    </objects>
+</document>

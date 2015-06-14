@@ -7,12 +7,15 @@
 //
 
 import UIKit
-import QuartzCore
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    // MARK: Outlets & Properties
-
+    // MARK: Branding Outlets
+    @IBOutlet weak var logo: SpringImageView!
+    @IBOutlet weak var subtitle: SpringLabel!
+    var animationNumber = 0
+    
+    // MARK: User Input Outlets
     @IBOutlet weak var searchTerm: SpringTextField!
     @IBOutlet weak var searchTypeControl: UISegmentedControl!
     @IBOutlet weak var difficultyControl: UISegmentedControl!
@@ -21,12 +24,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var tournamentPickerView: UIView!
     @IBOutlet weak var categoriesPicker: UIPickerView!
     @IBOutlet weak var tournamentsPicker: UIPickerView!
+    
+    // MARK: Search Form Data
     private var categories: JSON!
     private var tournaments: JSON!
-    
-    
-    /************************************/
-    /************************************/
     
     // MARK:-
     // MARK: UIViewController Methods
@@ -35,75 +36,46 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         super.viewDidLoad()
         
-        // Set the width of the searchType segmented control
-        //searchTypeControl.apportionsSegmentWidthsByContent = true;
-        
         // Load picker data
         loadCategories()
         loadTournaments(difficulty: "All", resultsType: "All")
+        
+        // Set tap recognition on logo and subtitle
+        var target = UITapGestureRecognizer(target: self, action: Selector("logoTapped:"))
+        logo.addGestureRecognizer(target)
                 
     }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func jiggleAnimation(#viewToAnimate: UIView) {
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 0.02
-        animation.repeatCount = 8
-        animation.autoreverses = true
-        animation.fromValue = NSValue(CGPoint: CGPointMake(viewToAnimate.center.x - 10, viewToAnimate.center.y))
-        animation.toValue = NSValue(CGPoint: CGPointMake(viewToAnimate.center.x + 10, viewToAnimate.center.y))
-        viewToAnimate.layer.addAnimation(animation, forKey: "position")
-    }
-    
-    func wiggleAnimation(#viewToAnimate: UIView) {
-        var transform:CATransform3D = CATransform3DMakeRotation(0.08, 0, 0, 1.0);
-        var animation:CABasicAnimation = CABasicAnimation(keyPath: "transform");
-        animation.toValue = NSValue(CATransform3D: transform);
-        animation.autoreverses = true;
-        animation.duration = 0.1;
-        animation.repeatCount = 10;
-        animation.delegate = self;
-        viewToAnimate.layer.addAnimation(animation, forKey: "wiggleAnimation");
-    }
-    
-    //func squeezeUpAnimation
-    
-    /************************************/
-    /************************************/
     
     // MARK:-
     // MARK: Keyboard Methods
     
-    // Closes the keyboard when finished
+    // Performs segue to resultsViewController when editing is done if input is valid
     @IBAction func textFieldDoneEditing(sender: SpringTextField) {
         if sender.text == "" {
+            
+            // Shake animation if text box is empty
             sender.animation = "shake"
             sender.curve = "spring"
             sender.duration = 1.0
             sender.animate()
+            sender.placeholder = "You Must Enter a Search Term!"
+            
         } else {
+            
+            // Text box contains valid search term; perform segue
             self.performSegueWithIdentifier("resultsSegue", sender: self)
         }
     }
     
-    // Keyboard if background is tapped
+    // Close keyboard if background is tapped while editing
     @IBAction func backgroundPressedWithKeyboard(sender: UIControl) {
         searchTerm.resignFirstResponder()
     }
     
-    
-    /************************************/
-    /************************************/
-    
     // MARK:-
-    // MARK: Animations
+    // MARK: Animation Methods
     
-    // MARK: Picker Animations
+    // Opens the tournament picker
     @IBAction func TournamentPickerInitiate(sender: UIButton) {
         UIView.animateWithDuration(0.3) {
             var tournamentPickerFrame = self.tournamentPickerView.frame
@@ -112,6 +84,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    // Closes the tournamnet picker
     @IBAction func TournamentPickerTerminate(sender: UIBarButtonItem) {
         UIView.animateWithDuration(0.3) {
             var tournamentPickerFrame = self.tournamentPickerView.frame
@@ -120,11 +93,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    // Opens the category picker
     @IBAction func CategoryPickerInitiate(sender: UIButton) {
-        //self.categoryPickerView.animation = "slideUp"
-        //self.categoryPickerView.curve = "spring"
-        //self.categoryPickerView.duration = 0.2
-        //self.categoryPickerView.animate()
         UIView.animateWithDuration(0.3) {
             var categoryPickerFrame = self.categoryPickerView.frame
             categoryPickerFrame.origin.y = self.view.frame.height - categoryPickerFrame.height
@@ -132,6 +102,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    // Closes the category picker
     @IBAction func CategoryPickerTerminate(sender: UIBarButtonItem) {
         UIView.animateWithDuration(0.3) {
             var categoryPickerFrame = self.categoryPickerView.frame
@@ -140,6 +111,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    // Animates the logo and subtitle when tapped
+    func logoTapped(image: AnyObject) {
+        
+        // Valid animations for logo / subtitle
+        var animationSelection = ["pop", "wobble", "morph", "swing", "zoomIn"]
+        
+        // Select from valid animation
+        var animation = animationSelection[animationNumber % 5]
+        animationNumber++
+        
+        // Animate logo and subtitle
+        logo.animation = animation
+        subtitle.animation = animation
+        logo.curve = "spring"
+        subtitle.curve = "spring"
+        logo.duration = 2.0
+        subtitle.duration = 2.0
+        logo.animate()
+        subtitle.animate()
+    }
+
+    // MARK:-
     // MARK: Segue Methods
     
     // Reverse Segue Back to Search Form
@@ -147,8 +140,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
+    // Send input data to resultsViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "resultsSegue") {
+            
+            // Gets reference to Results View Controller
             var resultsViewController = segue.destinationViewController as! ResultsViewController
             
             // Get the search term
@@ -180,13 +176,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    
-    /************************************/
-    /************************************/
-    
     // MARK:-
-    // MARK: Picker Methods
-    
     // MARK: Picker Data Source Methods
     
     // Returns number of components in picker
@@ -215,10 +205,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    
-    /************************************/
-    /************************************/
-    
     // MARK:-
     // MARK: Load Tournament & Category Methods
     
@@ -240,6 +226,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         var response: NSURLResponse?
         var error: NSErrorPointer = nil
         var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: error)
+        if data == nil {
+            loadCategories()
+            return
+        }
         var reply = NSString(data: data!, encoding: NSUTF8StringEncoding)! as String
         self.categories = JSON(string: reply)
     }
@@ -253,11 +243,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         var response: NSURLResponse?
         var error: NSErrorPointer = nil
         var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: error)
+        if data == nil {
+            loadTournaments(difficulty: difficulty, resultsType: resultsType)
+            return
+        }
         var reply = NSString(data: data!, encoding: NSUTF8StringEncoding)! as String
         self.tournaments = JSON(string: reply)
     }
     
-    /************************************/
-    /************************************/
-
 }

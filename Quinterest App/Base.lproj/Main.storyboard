@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Quinterest-Logo-White" translatesAutoresizingMaskIntoConstraints="NO" id="7ZV-Le-Oif" customClass="SpringImageView" customModule="Quinterest_App" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Quinterest-Logo-White" translatesAutoresizingMaskIntoConstraints="NO" id="7ZV-Le-Oif" customClass="SpringImageView" customModule="Quinterest_App" customModuleProvider="target">
                                 <rect key="frame" x="91" y="45" width="418" height="137"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7ZV-Le-Oif" secondAttribute="height" multiplier="437:143" id="4ma-Zg-lcf"/>
@@ -307,9 +307,11 @@
                         <outlet property="TournamentsPicker" destination="eUP-Fw-yPu" id="B9e-Zp-mlU"/>
                         <outlet property="categoryPickerView" destination="35N-WF-cry" id="agu-dz-oVJ"/>
                         <outlet property="difficultyControl" destination="nfC-Yz-KgP" id="F7r-Dh-3SL"/>
+                        <outlet property="logo" destination="7ZV-Le-Oif" id="lz5-sg-vr5"/>
                         <outlet property="questionTypeControl" destination="kfa-uA-bRM" id="wbu-as-ZLv"/>
                         <outlet property="searchTerm" destination="zQC-hb-Xr0" id="SVW-U6-IQW"/>
                         <outlet property="searchTypeControl" destination="3l0-dq-djm" id="QKK-hZ-fym"/>
+                        <outlet property="subtitle" destination="qrz-uU-6AJ" id="wam-2q-d9f"/>
                         <outlet property="tournamentPickerView" destination="TXV-OY-8I8" id="4KU-zp-8UQ"/>
                         <segue destination="0cY-Z1-j4I" kind="show" identifier="resultsSegue" id="0kr-bl-b9Q"/>
                     </connections>
@@ -342,9 +344,72 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ycw-Bw-O6v">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ycw-Bw-O6v">
                                 <rect key="frame" x="0.0" y="64" width="599" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="vnl-XC-Xgc" customClass="ResultTableCell" customModule="Quinterest_App" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vnl-XC-Xgc" id="KnQ-Je-Mkv">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExX-JM-54X">
+                                                    <rect key="frame" x="8" y="8" width="583" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-So-qQQ">
+                                                    <rect key="frame" x="8" y="32" width="583" height="79"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Question">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-MR-P8g">
+                                                    <rect key="frame" x="8" y="119" width="583" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Answer">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="h7x-So-qQQ" secondAttribute="trailing" constant="8" id="0Zs-js-raf"/>
+                                                <constraint firstAttribute="trailing" secondItem="cYB-MR-P8g" secondAttribute="trailing" constant="8" id="7Ky-zR-8Om"/>
+                                                <constraint firstItem="ExX-JM-54X" firstAttribute="top" secondItem="KnQ-Je-Mkv" secondAttribute="top" constant="8" id="DAI-Ay-q08"/>
+                                                <constraint firstItem="h7x-So-qQQ" firstAttribute="top" secondItem="ExX-JM-54X" secondAttribute="bottom" constant="8" id="Gbh-dk-mtQ"/>
+                                                <constraint firstItem="h7x-So-qQQ" firstAttribute="leading" secondItem="KnQ-Je-Mkv" secondAttribute="leading" constant="8" id="J86-Sn-pO4"/>
+                                                <constraint firstAttribute="bottom" secondItem="cYB-MR-P8g" secondAttribute="bottom" constant="8" id="LlB-dW-Sby"/>
+                                                <constraint firstItem="ExX-JM-54X" firstAttribute="leading" secondItem="KnQ-Je-Mkv" secondAttribute="leading" constant="8" id="aHe-FT-lBC"/>
+                                                <constraint firstAttribute="trailing" secondItem="ExX-JM-54X" secondAttribute="trailing" constant="8" id="bvq-e5-Acs"/>
+                                                <constraint firstItem="cYB-MR-P8g" firstAttribute="leading" secondItem="KnQ-Je-Mkv" secondAttribute="leading" constant="8" id="i1u-nh-hlV"/>
+                                                <constraint firstItem="cYB-MR-P8g" firstAttribute="top" secondItem="h7x-So-qQQ" secondAttribute="bottom" constant="8" id="rhZ-nn-FlF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="answerLabel" destination="cYB-MR-P8g" id="iCr-DK-U1u"/>
+                                            <outlet property="infoLabel" destination="ExX-JM-54X" id="F7F-SZ-2nf"/>
+                                            <outlet property="questionLabel" destination="h7x-So-qQQ" id="At3-4W-MQE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0cY-Z1-j4I" id="Ypj-Ia-PjS"/>
+                                    <outlet property="delegate" destination="0cY-Z1-j4I" id="vDi-wI-VE5"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -360,6 +425,9 @@
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="ycw-Bw-O6v" id="0Zh-Ni-0bk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0II-ui-bnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="maM-2F-gKs" userLabel="Exit" sceneMemberID="exit"/>
