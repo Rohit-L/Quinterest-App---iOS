@@ -39,7 +39,6 @@
 		B5CC84631B2C935F00C7B6A2 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC84461B2C935F00C7B6A2 /* TransitionZoom.swift */; };
 		B5CC84641B2C935F00C7B6A2 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC84471B2C935F00C7B6A2 /* UnwindSegue.swift */; };
 		B5CC84661B2CCD4300C7B6A2 /* ResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC84651B2CCD4300C7B6A2 /* ResultTableCell.swift */; };
-		B5CC84681B2CCFEF00C7B6A2 /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CC84671B2CCFEF00C7B6A2 /* ResultCell.xib */; };
 		B5D3B6FB1B2B30F300552275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */; };
 		B5D3B6FD1B2B30F300552275 /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B6FC1B2B30F300552275 /* SearchFormViewController.swift */; };
 		B5D3B7021B2B30F300552275 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D3B7011B2B30F300552275 /* Images.xcassets */; };
@@ -92,7 +91,6 @@
 		B5CC84461B2C935F00C7B6A2 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		B5CC84471B2C935F00C7B6A2 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		B5CC84651B2CCD4300C7B6A2 /* ResultTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableCell.swift; sourceTree = "<group>"; };
-		B5CC84671B2CCFEF00C7B6A2 /* ResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
 		B5D3B6F51B2B30F300552275 /* Quinterest App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quinterest App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D3B6F91B2B30F300552275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +121,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5AA6B931B2DE3A30062CDCA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B5CC84291B2C935F00C7B6A2 /* Spring */,
+				B589B8891B2BAEB70087D156 /* json.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		B5AA6B941B2DE4D40062CDCA /* ResultsScene */ = {
+			isa = PBXGroup;
+			children = (
+				B5D3B71E1B2B594000552275 /* ResultsViewController.swift */,
+				B5CC84651B2CCD4300C7B6A2 /* ResultTableCell.swift */,
+			);
+			name = ResultsScene;
+			sourceTree = "<group>";
+		};
+		B5AA6B951B2DE4E00062CDCA /* SearchFormScene */ = {
+			isa = PBXGroup;
+			children = (
+				B5D3B6FC1B2B30F300552275 /* SearchFormViewController.swift */,
+			);
+			name = SearchFormScene;
+			sourceTree = "<group>";
+		};
 		B5CC84291B2C935F00C7B6A2 /* Spring */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,17 +205,14 @@
 		B5D3B6F71B2B30F300552275 /* Quinterest App */ = {
 			isa = PBXGroup;
 			children = (
-				B5CC84291B2C935F00C7B6A2 /* Spring */,
-				B5D3B6FC1B2B30F300552275 /* SearchFormViewController.swift */,
-				B5D3B71E1B2B594000552275 /* ResultsViewController.swift */,
+				B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */,
+				B5AA6B951B2DE4E00062CDCA /* SearchFormScene */,
+				B5AA6B941B2DE4D40062CDCA /* ResultsScene */,
 				B52635CC1B2C7B76009AF9CB /* Main.storyboard */,
+				B5D3B7031B2B30F300552275 /* LaunchScreen.xib */,
 				B5D3B7011B2B30F300552275 /* Images.xcassets */,
 				B5D3B6F81B2B30F300552275 /* Supporting Files */,
-				B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */,
-				B589B8891B2BAEB70087D156 /* json.swift */,
-				B5D3B7031B2B30F300552275 /* LaunchScreen.xib */,
-				B5CC84651B2CCD4300C7B6A2 /* ResultTableCell.swift */,
-				B5CC84671B2CCFEF00C7B6A2 /* ResultCell.xib */,
+				B5AA6B931B2DE3A30062CDCA /* Libraries */,
 			);
 			path = "Quinterest App";
 			sourceTree = "<group>";
@@ -305,7 +326,6 @@
 				B52635CE1B2C7B76009AF9CB /* Main.storyboard in Resources */,
 				B5D3B7051B2B30F300552275 /* LaunchScreen.xib in Resources */,
 				B5D3B7021B2B30F300552275 /* Images.xcassets in Resources */,
-				B5CC84681B2CCFEF00C7B6A2 /* ResultCell.xib in Resources */,
 				B5CC84571B2C935F00C7B6A2 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

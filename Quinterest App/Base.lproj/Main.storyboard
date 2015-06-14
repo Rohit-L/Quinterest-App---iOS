@@ -75,7 +75,7 @@
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3l0-dq-djm">
                                         <rect key="frame" x="16" y="69" width="568" height="29"/>
                                         <segments>
-                                            <segment title="Question"/>
+                                            <segment title="Answer"/>
                                             <segment title="Question &amp; Answer"/>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,7 +91,6 @@
                                         <segments>
                                             <segment title="Tossups"/>
                                             <segment title="Bonuses"/>
-                                            <segment title="Both"/>
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -426,6 +425,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="resultsNavigationBar" destination="wQ1-50-eMa" id="cyc-mN-RNF"/>
                         <outlet property="tableView" destination="ycw-Bw-O6v" id="0Zh-Ni-0bk"/>
                     </connections>
                 </viewController>
@@ -436,7 +436,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Blue-Button" width="11" height="9"/>
+        <image name="Blue-Button" width="3" height="3"/>
         <image name="Quinterest-Logo-White" width="876" height="286"/>
     </resources>
 </document>
