@@ -12,7 +12,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // MARK: Reference to Table View
     @IBOutlet weak var tableView: UITableView!
-    var resultsCellIdentifier = "cell"
+    var tossupCell = "tossupCell"
+    var bonusCell = "bonusCell"
     
     // MARK: Reference to Navigation Bar
     @IBOutlet weak var resultsNavigationBar: UINavigationItem!
@@ -81,25 +82,85 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        // Get a valid result cell
-        var cell: ResultTableCell = tableView.dequeueReusableCellWithIdentifier(resultsCellIdentifier, forIndexPath: indexPath) as! ResultTableCell
+        if resultsType == "Tossups" {
+            
+            // Get a valid result cell
+            var cell: TossupResultTableCell = tableView.dequeueReusableCellWithIdentifier(tossupCell, forIndexPath: indexPath) as! TossupResultTableCell
+            
+            // Set the text of infoLabel
+            cell.infoLabel.text = "ID: " + self.queryData[indexPath.row + 1]["ID"].asString! + " | " + self.queryData[indexPath.row + 1]["Tournament"].asString! + " | " + self.queryData[indexPath.row + 1]["Year"].asString! + " | Round: " + self.queryData[indexPath.row + 1]["Round"].asString! + " | Question: " + self.queryData[indexPath.row + 1]["Question #"].asString! + " | " + self.queryData[indexPath.row + 1]["Category"].asString!
+            
+            // Set attributed text of questionLabel
+            var questionLabel = NSMutableAttributedString(string: "Question: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+            var question = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Question"].asString!)
+            questionLabel.appendAttributedString(question)
+            cell.questionLabel.attributedText = questionLabel
+            
+            // Set attributed text of answerLabel
+            var answerLabel = NSMutableAttributedString(string: "Answer: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+            var answer = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Answer"].asString!)
+            answerLabel.appendAttributedString(answer)
+            cell.answerLabel.attributedText = answerLabel
+            
+            return cell
+            
+        } else {
+            
+            // Get a valid result cell
+            var cell: BonusResultTableCell = tableView.dequeueReusableCellWithIdentifier(bonusCell, forIndexPath: indexPath) as! BonusResultTableCell
+            
+            // Set the text of infoLabel
+            cell.infoLabel.text = "ID: " + self.queryData[indexPath.row + 1]["ID"].asString! + " | " + self.queryData[indexPath.row + 1]["Tournament"].asString! + " | " + self.queryData[indexPath.row + 1]["Year"].asString! + " | Round: " + self.queryData[indexPath.row + 1]["Round"].asString! + " | Question: " + self.queryData[indexPath.row + 1]["Question #"].asString! + " | " + self.queryData[indexPath.row + 1]["Category"].asString!
+            
+            // Set attributed text of intoLabel
+            if self.queryData[indexPath.row + 1]["Intro"].asString! != "" {
+                var introLabel = NSMutableAttributedString(string: "Intro: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+                var intro = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Intro"].asString!)
+                introLabel.appendAttributedString(intro)
+                cell.introLabel.attributedText = introLabel
+            } else {
+                cell.introLabel.attributedText = NSMutableAttributedString(string: "")
+            }
+            
+            // Set attributed text of question1Label
+            var question1Label = NSMutableAttributedString(string: "Question 1: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+            var question1 = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Question1"].asString!)
+            question1Label.appendAttributedString(question1)
+            cell.question1Label.attributedText = question1Label
+            
+            // Set attributed text of answer1Label
+            var answer1Label = NSMutableAttributedString(string: "Answer: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+            var answer1 = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Answer1"].asString!)
+            answer1Label.appendAttributedString(answer1)
+            cell.answer1Label.attributedText = answer1Label
+            
+            // Set attributed text of question2Label
+            var question2Label = NSMutableAttributedString(string: "Question 2: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+            var question2 = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Question2"].asString!)
+            question2Label.appendAttributedString(question2)
+            cell.question2Label.attributedText = question2Label
+            
+            // Set attributed text of answer1Label
+            var answer2Label = NSMutableAttributedString(string: "Answer: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+            var answer2 = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Answer2"].asString!)
+            answer2Label.appendAttributedString(answer2)
+            cell.answer2Label.attributedText = answer2Label
+            
+            // Set attributed text of question3Label
+            var question3Label = NSMutableAttributedString(string: "Question 3: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+            var question3 = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Question3"].asString!)
+            question3Label.appendAttributedString(question3)
+            cell.question3Label.attributedText = question3Label
+            
+            // Set attributed text of answer1Label
+            var answer3Label = NSMutableAttributedString(string: "Answer: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
+            var answer3 = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Answer3"].asString!)
+            answer3Label.appendAttributedString(answer3)
+            cell.answer3Label.attributedText = answer3Label
+            
+            return cell
+        }
         
-        // Set the text of infoLabel
-        cell.infoLabel.text = "ID: " + self.queryData[indexPath.row + 1]["ID"].asString! + " | " + self.queryData[indexPath.row + 1]["Tournament"].asString! + " | " + self.queryData[indexPath.row + 1]["Year"].asString! + " | Round: " + self.queryData[indexPath.row + 1]["Round"].asString! + " | Question: " + self.queryData[indexPath.row + 1]["Question #"].asString! + " | " + self.queryData[indexPath.row + 1]["Category"].asString!
-        
-        // Set attributed text of questionLabel
-        var questionLabel = NSMutableAttributedString(string: "Question: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
-        var question = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Question"].asString!)
-        questionLabel.appendAttributedString(question)
-        cell.questionLabel.attributedText = questionLabel
-        
-        // Set attributed text of answerLabel
-        var answerLabel = NSMutableAttributedString(string: "Answer: ", attributes: [NSFontAttributeName: UIFont.boldSystemFontOfSize(14)])
-        var answer = NSMutableAttributedString(string: self.queryData[indexPath.row + 1]["Answer"].asString!)
-        answerLabel.appendAttributedString(answer)
-        cell.answerLabel.attributedText = answerLabel
-        
-        return cell
     }
 
 }

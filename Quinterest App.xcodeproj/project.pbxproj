@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B52635CE1B2C7B76009AF9CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B52635CC1B2C7B76009AF9CB /* Main.storyboard */; };
+		B54521351B2F43E100F637B8 /* BonusResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54521341B2F43E100F637B8 /* BonusResultTableCell.swift */; };
 		B589B88A1B2BAEB70087D156 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = B589B8891B2BAEB70087D156 /* json.swift */; };
 		B5CC84481B2C935F00C7B6A2 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC842A1B2C935F00C7B6A2 /* AsyncButton.swift */; };
 		B5CC84491B2C935F00C7B6A2 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC842B1B2C935F00C7B6A2 /* AsyncImageView.swift */; };
@@ -38,7 +39,7 @@
 		B5CC84621B2C935F00C7B6A2 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC84451B2C935F00C7B6A2 /* TransitionManager.swift */; };
 		B5CC84631B2C935F00C7B6A2 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC84461B2C935F00C7B6A2 /* TransitionZoom.swift */; };
 		B5CC84641B2C935F00C7B6A2 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC84471B2C935F00C7B6A2 /* UnwindSegue.swift */; };
-		B5CC84661B2CCD4300C7B6A2 /* ResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC84651B2CCD4300C7B6A2 /* ResultTableCell.swift */; };
+		B5CC84661B2CCD4300C7B6A2 /* TossupResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CC84651B2CCD4300C7B6A2 /* TossupResultTableCell.swift */; };
 		B5D3B6FB1B2B30F300552275 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */; };
 		B5D3B6FD1B2B30F300552275 /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B6FC1B2B30F300552275 /* SearchFormViewController.swift */; };
 		B5D3B7021B2B30F300552275 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D3B7011B2B30F300552275 /* Images.xcassets */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		B52635CD1B2C7B76009AF9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B54521341B2F43E100F637B8 /* BonusResultTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonusResultTableCell.swift; sourceTree = "<group>"; };
 		B589B8891B2BAEB70087D156 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = json.swift; path = "../../../../../Downloads/swift-json-master/json/json.swift"; sourceTree = "<group>"; };
 		B5CC842A1B2C935F00C7B6A2 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		B5CC842B1B2C935F00C7B6A2 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		B5CC84451B2C935F00C7B6A2 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		B5CC84461B2C935F00C7B6A2 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		B5CC84471B2C935F00C7B6A2 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
-		B5CC84651B2CCD4300C7B6A2 /* ResultTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableCell.swift; sourceTree = "<group>"; };
+		B5CC84651B2CCD4300C7B6A2 /* TossupResultTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TossupResultTableCell.swift; sourceTree = "<group>"; };
 		B5D3B6F51B2B30F300552275 /* Quinterest App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quinterest App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D3B6F91B2B30F300552275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				B5D3B71E1B2B594000552275 /* ResultsViewController.swift */,
-				B5CC84651B2CCD4300C7B6A2 /* ResultTableCell.swift */,
+				B5CC84651B2CCD4300C7B6A2 /* TossupResultTableCell.swift */,
+				B54521341B2F43E100F637B8 /* BonusResultTableCell.swift */,
 			);
 			name = ResultsScene;
 			sourceTree = "<group>";
@@ -245,9 +248,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B5D3B6F41B2B30F300552275 /* Quinterest App */ = {
+		B5D3B6F41B2B30F300552275 /* Quinterest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5D3B7141B2B30F300552275 /* Build configuration list for PBXNativeTarget "Quinterest App" */;
+			buildConfigurationList = B5D3B7141B2B30F300552275 /* Build configuration list for PBXNativeTarget "Quinterest" */;
 			buildPhases = (
 				B5D3B6F11B2B30F300552275 /* Sources */,
 				B5D3B6F21B2B30F300552275 /* Frameworks */,
@@ -257,7 +260,7 @@
 			);
 			dependencies = (
 			);
-			name = "Quinterest App";
+			name = Quinterest;
 			productName = "Quinterest App";
 			productReference = B5D3B6F51B2B30F300552275 /* Quinterest App.app */;
 			productType = "com.apple.product-type.application";
@@ -311,7 +314,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5D3B6F41B2B30F300552275 /* Quinterest App */,
+				B5D3B6F41B2B30F300552275 /* Quinterest */,
 				B5D3B7091B2B30F300552275 /* Quinterest AppTests */,
 			);
 		};
@@ -347,7 +350,7 @@
 				B5D3B6FD1B2B30F300552275 /* SearchFormViewController.swift in Sources */,
 				B5CC844B1B2C935F00C7B6A2 /* BlurView.swift in Sources */,
 				B5CC84551B2C935F00C7B6A2 /* KeyboardLayoutConstraint.swift in Sources */,
-				B5CC84661B2CCD4300C7B6A2 /* ResultTableCell.swift in Sources */,
+				B5CC84661B2CCD4300C7B6A2 /* TossupResultTableCell.swift in Sources */,
 				B5CC84601B2C935F00C7B6A2 /* SpringTextView.swift in Sources */,
 				B5CC84481B2C935F00C7B6A2 /* AsyncButton.swift in Sources */,
 				B5CC84511B2C935F00C7B6A2 /* DesignableTextView.swift in Sources */,
@@ -363,6 +366,7 @@
 				B5CC84591B2C935F00C7B6A2 /* SoundPlayer.swift in Sources */,
 				B5CC84581B2C935F00C7B6A2 /* Misc.swift in Sources */,
 				B5CC84521B2C935F00C7B6A2 /* DesignableView.swift in Sources */,
+				B54521351B2F43E100F637B8 /* BonusResultTableCell.swift in Sources */,
 				B5CC84611B2C935F00C7B6A2 /* SpringView.swift in Sources */,
 				B589B88A1B2BAEB70087D156 /* json.swift in Sources */,
 				B5CC84491B2C935F00C7B6A2 /* AsyncImageView.swift in Sources */,
@@ -392,7 +396,7 @@
 /* Begin PBXTargetDependency section */
 		B5D3B70C1B2B30F300552275 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B5D3B6F41B2B30F300552275 /* Quinterest App */;
+			target = B5D3B6F41B2B30F300552275 /* Quinterest */;
 			targetProxy = B5D3B70B1B2B30F300552275 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -566,7 +570,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5D3B7141B2B30F300552275 /* Build configuration list for PBXNativeTarget "Quinterest App" */ = {
+		B5D3B7141B2B30F300552275 /* Build configuration list for PBXNativeTarget "Quinterest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5D3B7151B2B30F300552275 /* Debug */,

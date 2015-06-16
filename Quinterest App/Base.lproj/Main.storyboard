@@ -308,6 +308,7 @@
                         <outlet property="difficultyControl" destination="nfC-Yz-KgP" id="F7r-Dh-3SL"/>
                         <outlet property="logo" destination="7ZV-Le-Oif" id="lz5-sg-vr5"/>
                         <outlet property="questionTypeControl" destination="kfa-uA-bRM" id="wbu-as-ZLv"/>
+                        <outlet property="searchFormView" destination="b7x-vG-qIn" id="ojA-Zp-tgQ"/>
                         <outlet property="searchTerm" destination="zQC-hb-Xr0" id="SVW-U6-IQW"/>
                         <outlet property="searchTypeControl" destination="3l0-dq-djm" id="QKK-hZ-fym"/>
                         <outlet property="subtitle" destination="qrz-uU-6AJ" id="wam-2q-d9f"/>
@@ -347,7 +348,7 @@
                                 <rect key="frame" x="0.0" y="64" width="599" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="vnl-XC-Xgc" customClass="ResultTableCell" customModule="Quinterest_App" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tossupCell" id="vnl-XC-Xgc" customClass="TossupResultTableCell" customModule="Quinterest_App" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vnl-XC-Xgc" id="KnQ-Je-Mkv">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -402,6 +403,162 @@
                                             <outlet property="answerLabel" destination="cYB-MR-P8g" id="iCr-DK-U1u"/>
                                             <outlet property="infoLabel" destination="ExX-JM-54X" id="F7F-SZ-2nf"/>
                                             <outlet property="questionLabel" destination="h7x-So-qQQ" id="At3-4W-MQE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bonusCell" rowHeight="250" id="ZEG-bZ-5LT" customClass="BonusResultTableCell" customModule="Quinterest_App" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZEG-bZ-5LT" id="SSo-Px-DaU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-ed-fUS">
+                                                    <rect key="frame" x="8" y="8" width="583" height="88"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rf-Lp-E7w">
+                                                    <rect key="frame" x="8" y="104" width="583" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Intro">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvm-wj-vva">
+                                                    <rect key="frame" x="8" y="128" width="583" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Question1">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-Ww-TpE">
+                                                    <rect key="frame" x="8" y="144" width="583" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Answer1">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivG-LX-IZ6">
+                                                    <rect key="frame" x="8" y="168" width="583" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Question2">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a9-YM-0Vr">
+                                                    <rect key="frame" x="8" y="184.5" width="583" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Answer2">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTT-Z2-JrZ">
+                                                    <rect key="frame" x="8" y="208.5" width="583" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Question3">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyC-a3-o6o">
+                                                    <rect key="frame" x="8" y="225" width="583" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Answer3">
+                                                            <attributes>
+                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fTT-Z2-JrZ" firstAttribute="top" secondItem="7a9-YM-0Vr" secondAttribute="bottom" constant="8" id="2C2-0g-Uhc"/>
+                                                <constraint firstAttribute="bottom" secondItem="zyC-a3-o6o" secondAttribute="bottom" constant="8" id="2oA-SB-tcY"/>
+                                                <constraint firstItem="zyC-a3-o6o" firstAttribute="top" secondItem="fTT-Z2-JrZ" secondAttribute="bottom" id="6hN-fh-g9w"/>
+                                                <constraint firstItem="zyC-a3-o6o" firstAttribute="leading" secondItem="SSo-Px-DaU" secondAttribute="leading" constant="8" id="8HW-Qe-9aa"/>
+                                                <constraint firstItem="fTT-Z2-JrZ" firstAttribute="top" secondItem="ivG-LX-IZ6" secondAttribute="bottom" constant="54" id="BTd-pf-vZ4"/>
+                                                <constraint firstItem="7a9-YM-0Vr" firstAttribute="top" secondItem="ivG-LX-IZ6" secondAttribute="bottom" id="Ced-bK-3jB"/>
+                                                <constraint firstItem="Nvm-wj-vva" firstAttribute="top" secondItem="9Rf-Lp-E7w" secondAttribute="bottom" constant="8" id="DXE-Oz-NOv"/>
+                                                <constraint firstAttribute="trailing" secondItem="dMN-ed-fUS" secondAttribute="trailing" constant="8" id="Dak-wZ-BjF"/>
+                                                <constraint firstAttribute="trailing" secondItem="ivG-LX-IZ6" secondAttribute="trailing" constant="8" id="HZ0-8T-XUt"/>
+                                                <constraint firstItem="9Rf-Lp-E7w" firstAttribute="top" secondItem="dMN-ed-fUS" secondAttribute="bottom" constant="8" id="IfB-Mj-PXC"/>
+                                                <constraint firstItem="zyC-a3-o6o" firstAttribute="top" secondItem="7a9-YM-0Vr" secondAttribute="bottom" constant="37" id="K97-HA-rKi"/>
+                                                <constraint firstAttribute="trailing" secondItem="zyC-a3-o6o" secondAttribute="trailing" constant="8" id="MwK-FK-gyG"/>
+                                                <constraint firstItem="Nvm-wj-vva" firstAttribute="top" secondItem="dMN-ed-fUS" secondAttribute="bottom" constant="8" id="Tk4-6D-Tkw"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nvm-wj-vva" secondAttribute="trailing" constant="8" id="Wjh-0l-LRp"/>
+                                                <constraint firstAttribute="trailing" secondItem="fTT-Z2-JrZ" secondAttribute="trailing" constant="8" id="ZJv-M0-m1E"/>
+                                                <constraint firstAttribute="trailing" secondItem="KsV-Ww-TpE" secondAttribute="trailing" constant="8" id="c0b-bq-q3G"/>
+                                                <constraint firstItem="dMN-ed-fUS" firstAttribute="top" secondItem="SSo-Px-DaU" secondAttribute="top" constant="8" id="e8z-fV-1EI"/>
+                                                <constraint firstItem="dMN-ed-fUS" firstAttribute="leading" secondItem="SSo-Px-DaU" secondAttribute="leading" constant="8" id="eBJ-OC-Dvp"/>
+                                                <constraint firstItem="ivG-LX-IZ6" firstAttribute="top" secondItem="KsV-Ww-TpE" secondAttribute="bottom" constant="8" id="fkJ-aD-i7v"/>
+                                                <constraint firstItem="fTT-Z2-JrZ" firstAttribute="leading" secondItem="SSo-Px-DaU" secondAttribute="leading" constant="8" id="ibe-iQ-eAn"/>
+                                                <constraint firstAttribute="trailing" secondItem="7a9-YM-0Vr" secondAttribute="trailing" constant="8" id="jLL-Bc-HrG"/>
+                                                <constraint firstItem="KsV-Ww-TpE" firstAttribute="top" secondItem="9Rf-Lp-E7w" secondAttribute="bottom" constant="58" id="kO9-IV-BVM"/>
+                                                <constraint firstItem="7a9-YM-0Vr" firstAttribute="leading" secondItem="SSo-Px-DaU" secondAttribute="leading" constant="8" id="mDd-Z5-1Z0"/>
+                                                <constraint firstItem="9Rf-Lp-E7w" firstAttribute="leading" secondItem="SSo-Px-DaU" secondAttribute="leading" constant="8" id="mlR-zR-QUz"/>
+                                                <constraint firstItem="KsV-Ww-TpE" firstAttribute="leading" secondItem="SSo-Px-DaU" secondAttribute="leading" constant="8" id="oT8-Ot-Jlf"/>
+                                                <constraint firstItem="7a9-YM-0Vr" firstAttribute="top" secondItem="KsV-Ww-TpE" secondAttribute="bottom" constant="64" id="sfr-eo-Pie"/>
+                                                <constraint firstItem="Nvm-wj-vva" firstAttribute="leading" secondItem="SSo-Px-DaU" secondAttribute="leading" constant="8" id="tdu-lB-7nb"/>
+                                                <constraint firstItem="ivG-LX-IZ6" firstAttribute="leading" secondItem="SSo-Px-DaU" secondAttribute="leading" constant="8" id="thf-ts-tFV"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Rf-Lp-E7w" secondAttribute="trailing" constant="8" id="vs5-r3-BKN"/>
+                                                <constraint firstItem="KsV-Ww-TpE" firstAttribute="top" secondItem="Nvm-wj-vva" secondAttribute="bottom" id="y17-fb-nKM"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Tk4-6D-Tkw"/>
+                                                    <exclude reference="kO9-IV-BVM"/>
+                                                    <exclude reference="sfr-eo-Pie"/>
+                                                    <exclude reference="BTd-pf-vZ4"/>
+                                                    <exclude reference="K97-HA-rKi"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="answer1Label" destination="KsV-Ww-TpE" id="3Jd-kY-yqP"/>
+                                            <outlet property="answer2Label" destination="7a9-YM-0Vr" id="Gaj-7G-J5M"/>
+                                            <outlet property="answer3Label" destination="zyC-a3-o6o" id="bcN-SU-jut"/>
+                                            <outlet property="infoLabel" destination="dMN-ed-fUS" id="YAO-uZ-4uz"/>
+                                            <outlet property="introLabel" destination="9Rf-Lp-E7w" id="uQW-QX-aTy"/>
+                                            <outlet property="question1Label" destination="Nvm-wj-vva" id="aaw-l8-wBv"/>
+                                            <outlet property="question2Label" destination="ivG-LX-IZ6" id="1B5-Wi-hzz"/>
+                                            <outlet property="question3Label" destination="fTT-Z2-JrZ" id="NKH-cp-9iV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

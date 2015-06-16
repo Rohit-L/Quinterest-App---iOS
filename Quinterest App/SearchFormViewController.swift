@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var subtitle: SpringLabel!
     var animationNumber = 0
     
+    @IBOutlet weak var searchFormView: SpringView!
     // MARK: User Input Outlets
     @IBOutlet weak var searchTerm: SpringTextField!
     @IBOutlet weak var searchTypeControl: UISegmentedControl!
@@ -41,8 +42,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         loadTournaments(difficulty: "All", resultsType: "All")
         
         // Set tap recognition on logo and subtitle
-        var target = UITapGestureRecognizer(target: self, action: Selector("logoTapped:"))
-        logo.addGestureRecognizer(target)
+        var logoTarget = UITapGestureRecognizer(target: self, action: Selector("logoTapped:"))
+        logo.addGestureRecognizer(logoTarget)
+        
+        var formTarget = UITapGestureRecognizer(target: self, action: Selector("formTapped:"))
+        searchFormView.addGestureRecognizer(formTarget)
+        
+        NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("logoTapped"), userInfo: nil, repeats: true)
                 
     }
     
@@ -69,6 +75,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // Close keyboard if background is tapped while editing
     @IBAction func backgroundPressedWithKeyboard(sender: UIControl) {
+        searchTerm.resignFirstResponder()
+    }
+    
+    // Close keyboard if form tapped while editing
+    func formTapped(form: AnyObject) {
         searchTerm.resignFirstResponder()
     }
     
@@ -112,7 +123,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     // Animates the logo and subtitle when tapped
-    func logoTapped(image: AnyObject) {
+    func logoTapped(image: AnyObject?) {
         
         // Valid animations for logo / subtitle
         var animationSelection = ["pop", "wobble", "morph", "swing", "zoomIn"]
@@ -130,6 +141,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         subtitle.duration = 2.0
         logo.animate()
         subtitle.animate()
+    }
+    
+    func logoTapped() {
+        logoTapped(nil)
     }
 
     // MARK:-
