@@ -44,19 +44,9 @@
 		B5D3B6FD1B2B30F300552275 /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B6FC1B2B30F300552275 /* SearchFormViewController.swift */; };
 		B5D3B7021B2B30F300552275 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5D3B7011B2B30F300552275 /* Images.xcassets */; };
 		B5D3B7051B2B30F300552275 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D3B7031B2B30F300552275 /* LaunchScreen.xib */; };
-		B5D3B7111B2B30F300552275 /* Quinterest_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B7101B2B30F300552275 /* Quinterest_AppTests.swift */; };
 		B5D3B71F1B2B594000552275 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3B71E1B2B594000552275 /* ResultsViewController.swift */; };
+		B5FF4D341B4D8D41005ABA05 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF4D331B4D8D41005ABA05 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B5D3B70B1B2B30F300552275 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5D3B6ED1B2B30F300552275 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B5D3B6F41B2B30F300552275;
-			remoteInfo = "Quinterest App";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B52635CD1B2C7B76009AF9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,21 +89,14 @@
 		B5D3B6FC1B2B30F300552275 /* SearchFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormViewController.swift; sourceTree = "<group>"; };
 		B5D3B7011B2B30F300552275 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B5D3B7041B2B30F300552275 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B5D3B70A1B2B30F300552275 /* Quinterest AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quinterest AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D3B70F1B2B30F300552275 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5D3B7101B2B30F300552275 /* Quinterest_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quinterest_AppTests.swift; sourceTree = "<group>"; };
 		B5D3B71E1B2B594000552275 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		B5FF4D331B4D8D41005ABA05 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B5D3B6F21B2B30F300552275 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5D3B7071B2B30F300552275 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				B5D3B6F51B2B30F300552275 /* Quinterest.app */,
-				B5D3B70A1B2B30F300552275 /* Quinterest AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,6 +193,7 @@
 				B5D3B6FA1B2B30F300552275 /* AppDelegate.swift */,
 				B5AA6B951B2DE4E00062CDCA /* SearchFormScene */,
 				B5AA6B941B2DE4D40062CDCA /* ResultsScene */,
+				B5FF4D331B4D8D41005ABA05 /* AboutViewController.swift */,
 				B52635CC1B2C7B76009AF9CB /* Main.storyboard */,
 				B5D3B7031B2B30F300552275 /* LaunchScreen.xib */,
 				B5D3B7011B2B30F300552275 /* Images.xcassets */,
@@ -265,39 +248,17 @@
 			productReference = B5D3B6F51B2B30F300552275 /* Quinterest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B5D3B7091B2B30F300552275 /* Quinterest AppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5D3B7171B2B30F300552275 /* Build configuration list for PBXNativeTarget "Quinterest AppTests" */;
-			buildPhases = (
-				B5D3B7061B2B30F300552275 /* Sources */,
-				B5D3B7071B2B30F300552275 /* Frameworks */,
-				B5D3B7081B2B30F300552275 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B5D3B70C1B2B30F300552275 /* PBXTargetDependency */,
-			);
-			name = "Quinterest AppTests";
-			productName = "Quinterest AppTests";
-			productReference = B5D3B70A1B2B30F300552275 /* Quinterest AppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B5D3B6ED1B2B30F300552275 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Laucity;
 				TargetAttributes = {
 					B5D3B6F41B2B30F300552275 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					B5D3B7091B2B30F300552275 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = B5D3B6F41B2B30F300552275;
 					};
 				};
 			};
@@ -315,7 +276,6 @@
 			projectRoot = "";
 			targets = (
 				B5D3B6F41B2B30F300552275 /* Quinterest */,
-				B5D3B7091B2B30F300552275 /* Quinterest AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -330,13 +290,6 @@
 				B5D3B7051B2B30F300552275 /* LaunchScreen.xib in Resources */,
 				B5D3B7021B2B30F300552275 /* Images.xcassets in Resources */,
 				B5CC84571B2C935F00C7B6A2 /* LoadingView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B5D3B7081B2B30F300552275 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +326,7 @@
 				B5CC844C1B2C935F00C7B6A2 /* DesignableButton.swift in Sources */,
 				B5CC84631B2C935F00C7B6A2 /* TransitionZoom.swift in Sources */,
 				B5CC845D1B2C935F00C7B6A2 /* SpringImageView.swift in Sources */,
+				B5FF4D341B4D8D41005ABA05 /* AboutViewController.swift in Sources */,
 				B5CC845C1B2C935F00C7B6A2 /* SpringButton.swift in Sources */,
 				B5CC844F1B2C935F00C7B6A2 /* DesignableTabBarController.swift in Sources */,
 				B5CC844E1B2C935F00C7B6A2 /* DesignableLabel.swift in Sources */,
@@ -383,23 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5D3B7061B2B30F300552275 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5D3B7111B2B30F300552275 /* Quinterest_AppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B5D3B70C1B2B30F300552275 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B5D3B6F41B2B30F300552275 /* Quinterest */;
-			targetProxy = B5D3B70B1B2B30F300552275 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B52635CC1B2C7B76009AF9CB /* Main.storyboard */ = {
@@ -457,9 +395,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -497,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
@@ -512,10 +450,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Quinterest App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7 armv7s armv64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -524,45 +463,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Quinterest App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv7 armv7s armv64";
-			};
-			name = Release;
-		};
-		B5D3B7181B2B30F300552275 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Quinterest AppTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quinterest App.app/Quinterest App";
-				VALID_ARCHS = "arm64 armv7 armv7s";
-			};
-			name = Debug;
-		};
-		B5D3B7191B2B30F300552275 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Quinterest AppTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quinterest App.app/Quinterest App";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
@@ -584,15 +488,6 @@
 			buildConfigurations = (
 				B5D3B7151B2B30F300552275 /* Debug */,
 				B5D3B7161B2B30F300552275 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B5D3B7171B2B30F300552275 /* Build configuration list for PBXNativeTarget "Quinterest AppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B5D3B7181B2B30F300552275 /* Debug */,
-				B5D3B7191B2B30F300552275 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

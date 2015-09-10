@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quinterest_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quinterest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Quinterest-Logo-White" translatesAutoresizingMaskIntoConstraints="NO" id="7ZV-Le-Oif" customClass="SpringImageView" customModule="Quinterest_App" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Quinterest-Logo-White" translatesAutoresizingMaskIntoConstraints="NO" id="7ZV-Le-Oif" customClass="SpringImageView" customModule="Quinterest" customModuleProvider="target">
                                 <rect key="frame" x="91" y="45" width="418" height="137"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7ZV-Le-Oif" secondAttribute="height" multiplier="437:143" id="4ma-Zg-lcf"/>
@@ -33,8 +33,8 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Bowl Database Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrz-uU-6AJ" customClass="SpringLabel" customModule="Quinterest_App" customModuleProvider="target">
-                                <rect key="frame" x="222" y="183" width="155.5" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Bowl Database Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrz-uU-6AJ" customClass="SpringLabel" customModule="Quinterest" customModuleProvider="target">
+                                <rect key="frame" x="222" y="183" width="156" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -48,10 +48,10 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7x-vG-qIn" customClass="SpringView" customModule="Quinterest_App" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7x-vG-qIn" customClass="SpringView" customModule="Quinterest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="253" width="600" height="300"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Search Term" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zQC-hb-Xr0" customClass="SpringTextField" customModule="Quinterest_App" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Search Term" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zQC-hb-Xr0" customClass="SpringTextField" customModule="Quinterest" customModuleProvider="target">
                                         <rect key="frame" x="16" y="0.0" width="568" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert" returnKeyType="go"/>
@@ -67,12 +67,12 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tF-IP-lEe">
-                                        <rect key="frame" x="266" y="50" width="68.5" height="14.5"/>
+                                        <rect key="frame" x="266" y="50" width="69" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3l0-dq-djm">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3l0-dq-djm">
                                         <rect key="frame" x="16" y="69" width="568" height="29"/>
                                         <segments>
                                             <segment title="Answer"/>
@@ -80,13 +80,13 @@
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMg-ew-4aR">
-                                        <rect key="frame" x="260" y="117" width="79.5" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Question Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMg-ew-4aR">
+                                        <rect key="frame" x="260" y="117" width="80" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kfa-uA-bRM">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kfa-uA-bRM">
                                         <rect key="frame" x="16" y="137" width="568" height="29"/>
                                         <segments>
                                             <segment title="Tossups"/>
@@ -97,13 +97,13 @@
                                             <action selector="questionTypeControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="quR-p9-P0V"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCd-HR-fYY">
-                                        <rect key="frame" x="276" y="185" width="48" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Difficulty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCd-HR-fYY">
+                                        <rect key="frame" x="276" y="185" width="48" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nfC-Yz-KgP">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nfC-Yz-KgP">
                                         <rect key="frame" x="16" y="204" width="568" height="29"/>
                                         <segments>
                                             <segment title="All"/>
@@ -117,7 +117,7 @@
                                             <action selector="difficultyControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="yeU-4N-DAM"/>
                                         </connections>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPM-Hy-JIe">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPM-Hy-JIe">
                                         <rect key="frame" x="304" y="267" width="280" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="Yds-Wt-5mg"/>
@@ -130,7 +130,7 @@
                                             <action selector="TournamentPickerInitiate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcB-lz-9vl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evy-8S-Hk6">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evy-8S-Hk6">
                                         <rect key="frame" x="16" y="267" width="280" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="j6F-d4-xTr"/>
@@ -268,12 +268,24 @@
                                     <constraint firstItem="JwI-MM-JiI" firstAttribute="top" secondItem="TXV-OY-8I8" secondAttribute="top" id="m1n-52-2Tm"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnh-dm-1Be">
+                                <rect key="frame" x="570" y="570" width="22" height="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7Pv-pD-MWp" kind="show" id="y92-sY-8Iz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.31764705882352939" green="0.49803921568627452" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="7ZV-Le-Oif" secondAttribute="trailing" constant="75" id="3FH-hM-KeP"/>
                             <constraint firstAttribute="bottomMargin" secondItem="TXV-OY-8I8" secondAttribute="bottom" constant="-200" id="3nJ-iM-2qi"/>
                             <constraint firstItem="b7x-vG-qIn" firstAttribute="top" secondItem="qrz-uU-6AJ" secondAttribute="bottom" constant="55" id="4zZ-Bp-MIX"/>
+                            <constraint firstAttribute="trailing" secondItem="cnh-dm-1Be" secondAttribute="trailing" constant="8" id="5Yl-m1-hGd"/>
                             <constraint firstItem="b7x-vG-qIn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="APO-38-Rom"/>
                             <constraint firstItem="35N-WF-cry" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="EZG-Wa-Wo3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="35N-WF-cry" secondAttribute="trailing" constant="-20" id="EnX-Tx-br2"/>
@@ -282,15 +294,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="b7x-vG-qIn" secondAttribute="trailing" constant="-16" id="OWd-7n-bYZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="b7x-vG-qIn" secondAttribute="bottom" id="OXM-Zn-MAj"/>
                             <constraint firstItem="7ZV-Le-Oif" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="75" id="P0Q-DB-5zw"/>
+                            <constraint firstItem="cnh-dm-1Be" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="QGW-R0-A7o"/>
                             <constraint firstAttribute="centerX" secondItem="qrz-uU-6AJ" secondAttribute="centerX" id="ZBT-Mf-HNC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cnh-dm-1Be" secondAttribute="bottom" constant="8" id="cXr-j0-MQV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TXV-OY-8I8" secondAttribute="trailing" constant="-20" id="elH-2V-RaG"/>
                             <constraint firstItem="TXV-OY-8I8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="pW5-Nm-j2n"/>
+                            <constraint firstItem="b7x-vG-qIn" firstAttribute="top" secondItem="cnh-dm-1Be" secondAttribute="bottom" constant="8" id="shy-vv-kYs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="35N-WF-cry" secondAttribute="bottom" constant="-200" id="v59-Ci-piN"/>
                             <constraint firstAttribute="centerX" secondItem="7ZV-Le-Oif" secondAttribute="centerX" id="wyT-7M-IAB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="shy-vv-kYs"/>
                                 <exclude reference="OXM-Zn-MAj"/>
+                                <exclude reference="QGW-R0-A7o"/>
                             </mask>
                         </variation>
                         <connections>
@@ -318,12 +335,78 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="550"/>
+            <point key="canvasLocation" x="58" y="521"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="kdJ-7c-STk">
+            <objects>
+                <viewController id="7Pv-pD-MWp" customClass="AboutViewController" customModule="Quinterest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4QW-zf-aJM"/>
+                        <viewControllerLayoutGuide type="bottom" id="grl-Gg-8KL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tZe-w5-h6K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lV-ic-kMy">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="About" id="r4W-UN-TbL">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="P9N-Tu-Dpe">
+                                            <connections>
+                                                <segue destination="piU-zC-HzY" kind="unwind" unwindAction="unwindToSearchForm:" id="2Rf-rh-z4X"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5s-Nj-rZa">
+                                <rect key="frame" x="40" y="200" width="520" height="61"/>
+                                <string key="text">Quinterest is a quiz bowl search engine created to help players improve and write better questions. The name derives from the combination of “quiz bowl” and “interest.”</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For comments or concerns, please send an email to laucity@laucity.com" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p00-v5-4X8">
+                                <rect key="frame" x="40" y="568" width="520" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.31764705882352939" green="0.49803921568627452" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="P5s-Nj-rZa" secondAttribute="centerX" id="1iW-Ip-Fyz"/>
+                            <constraint firstItem="p00-v5-4X8" firstAttribute="leading" secondItem="tZe-w5-h6K" secondAttribute="leading" constant="40" id="6eN-x7-H0d"/>
+                            <constraint firstItem="4lV-ic-kMy" firstAttribute="top" secondItem="4QW-zf-aJM" secondAttribute="bottom" id="Cfk-xD-i4D"/>
+                            <constraint firstAttribute="trailing" secondItem="P5s-Nj-rZa" secondAttribute="trailing" constant="40" id="Frq-dA-NMQ"/>
+                            <constraint firstAttribute="trailing" secondItem="4lV-ic-kMy" secondAttribute="trailing" id="IrD-Mq-8O9"/>
+                            <constraint firstItem="P5s-Nj-rZa" firstAttribute="leading" secondItem="tZe-w5-h6K" secondAttribute="leading" constant="40" id="KVG-7I-BaO"/>
+                            <constraint firstItem="p00-v5-4X8" firstAttribute="top" secondItem="P5s-Nj-rZa" secondAttribute="bottom" constant="40" id="MPU-tw-bAF"/>
+                            <constraint firstItem="4lV-ic-kMy" firstAttribute="leading" secondItem="tZe-w5-h6K" secondAttribute="leading" id="Tgk-5B-k1h"/>
+                            <constraint firstAttribute="centerX" secondItem="p00-v5-4X8" secondAttribute="centerX" id="UrE-Nw-zhv"/>
+                            <constraint firstItem="P5s-Nj-rZa" firstAttribute="top" secondItem="tZe-w5-h6K" secondAttribute="topMargin" constant="200" id="VZC-02-BDy"/>
+                            <constraint firstAttribute="trailing" secondItem="p00-v5-4X8" secondAttribute="trailing" constant="40" id="eWX-Xy-JVe"/>
+                            <constraint firstItem="grl-Gg-8KL" firstAttribute="top" secondItem="p00-v5-4X8" secondAttribute="bottom" constant="16" id="zRE-Qt-JfI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MPU-tw-bAF"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZ1-oq-Fzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="piU-zC-HzY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="394" y="1247"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="Rvt-Bu-Pmi">
             <objects>
-                <viewController storyboardIdentifier="Results" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0cY-Z1-j4I" customClass="ResultsViewController" customModule="Quinterest_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Results" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0cY-Z1-j4I" customClass="ResultsViewController" customModule="Quinterest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YD4-t5-PJL"/>
                         <viewControllerLayoutGuide type="bottom" id="Koa-Cm-3x9"/>
@@ -348,7 +431,7 @@
                                 <rect key="frame" x="0.0" y="64" width="599" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tossupCell" id="vnl-XC-Xgc" customClass="TossupResultTableCell" customModule="Quinterest_App" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tossupCell" id="vnl-XC-Xgc" customClass="TossupResultTableCell" customModule="Quinterest" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vnl-XC-Xgc" id="KnQ-Je-Mkv">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -356,15 +439,15 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExX-JM-54X">
                                                     <rect key="frame" x="8" y="8" width="583" height="16"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-So-qQQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-So-qQQ">
                                                     <rect key="frame" x="8" y="32" width="583" height="79"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Question">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -372,12 +455,12 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-MR-P8g">
-                                                    <rect key="frame" x="8" y="119" width="583" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYB-MR-P8g">
+                                                    <rect key="frame" x="8" y="119" width="583" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Answer">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -405,23 +488,23 @@
                                             <outlet property="questionLabel" destination="h7x-So-qQQ" id="At3-4W-MQE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bonusCell" rowHeight="250" id="ZEG-bZ-5LT" customClass="BonusResultTableCell" customModule="Quinterest_App" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bonusCell" rowHeight="250" id="ZEG-bZ-5LT" customClass="BonusResultTableCell" customModule="Quinterest" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZEG-bZ-5LT" id="SSo-Px-DaU">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-ed-fUS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Info" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMN-ed-fUS">
                                                     <rect key="frame" x="8" y="8" width="583" height="88"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rf-Lp-E7w">
-                                                    <rect key="frame" x="8" y="104" width="583" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rf-Lp-E7w">
+                                                    <rect key="frame" x="8" y="104" width="583" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Intro">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -429,12 +512,12 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvm-wj-vva">
-                                                    <rect key="frame" x="8" y="128" width="583" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvm-wj-vva">
+                                                    <rect key="frame" x="8" y="128" width="583" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Question1">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -442,12 +525,12 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-Ww-TpE">
-                                                    <rect key="frame" x="8" y="144" width="583" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsV-Ww-TpE">
+                                                    <rect key="frame" x="8" y="144" width="583" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Answer1">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -455,12 +538,12 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivG-LX-IZ6">
-                                                    <rect key="frame" x="8" y="168" width="583" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivG-LX-IZ6">
+                                                    <rect key="frame" x="8" y="168" width="583" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Question2">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -468,12 +551,12 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a9-YM-0Vr">
-                                                    <rect key="frame" x="8" y="184.5" width="583" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7a9-YM-0Vr">
+                                                    <rect key="frame" x="8" y="185" width="583" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Answer2">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -481,12 +564,12 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTT-Z2-JrZ">
-                                                    <rect key="frame" x="8" y="208.5" width="583" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTT-Z2-JrZ">
+                                                    <rect key="frame" x="8" y="209" width="583" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Question3">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
@@ -494,12 +577,12 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyC-a3-o6o">
-                                                    <rect key="frame" x="8" y="225" width="583" height="16.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyC-a3-o6o">
+                                                    <rect key="frame" x="8" y="225" width="583" height="17"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Answer3">
                                                             <attributes>
-                                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                             </attributes>
